@@ -12,20 +12,48 @@ public class ArrayChallenge {
     int integerSize = getIntegerArraySize();
     int[] myIntArray = getIntegers(integerSize);
 
+    printArray(myIntArray);
+    System.out.println();
+    printArray(sortArray(myIntArray));
+
+
 
   }
 
   public static void printArray(int[] myIntArray) {
 
    for (int i = 0; i < myIntArray.length; i++) {
-     System.out.println(myIntArray[i]);
+     System.out.println("Element " + i + " is: " + myIntArray[i]);
    }
 
   }
 
   public static int[] sortArray(int[] unsortedArray) {
 
-    return Arrays.sort(unsortedArray, Collections.reverseOrder());
+    int[] sortedArray = new int[unsortedArray.length];
+
+    for (int i = 0; i < unsortedArray.length; i++) {
+      sortedArray[i] = unsortedArray[i];
+    }
+
+    boolean flag = true;
+    int temp;
+
+    while (flag) {
+      flag = false;
+
+      for (int i = 0; i < sortedArray.length - 1; i++) {
+        if (sortedArray[i] < sortedArray[i + 1]) {
+          temp = sortedArray[i];
+          sortedArray[i] = sortedArray[i + 1];
+          sortedArray[i + 1] = temp;
+          flag = true;
+        }
+      }
+    }
+    return sortedArray;
+
+//    return Arrays.sort(unsortedArray, Collections.reverseOrder());
   }
 
 
