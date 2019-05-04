@@ -30,11 +30,12 @@ public class ArrayChallenge {
 
   public static int[] sortArray(int[] unsortedArray) {
 
-    int[] sortedArray = new int[unsortedArray.length];
+//    int[] sortedArray = new int[unsortedArray.length];
+//    for (int i = 0; i < unsortedArray.length; i++) {
+//      sortedArray[i] = unsortedArray[i];
+//    }
 
-    for (int i = 0; i < unsortedArray.length; i++) {
-      sortedArray[i] = unsortedArray[i];
-    }
+    int[] sortedArray = Arrays.copyOf(unsortedArray, unsortedArray.length);
 
     boolean flag = true;
     int temp;
@@ -70,7 +71,5 @@ public class ArrayChallenge {
     }
     return values;
   }
-
-
 
 }
